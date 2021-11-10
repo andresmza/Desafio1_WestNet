@@ -26,12 +26,12 @@ if (isset($_POST['submit'])) {
                 echo "</pre>";
                 fclose($handle);
             } else {
-                echo "El archivo subido no tiene un formato compatible";
+                echo "El archivo subido no tiene un formato compatible.";
             }
         } else {
-            echo "Se produjo un error al leer el archivo";
+            echo "Se produjo un error al leer el archivo.";
         }
     } else {
-        echo "archivo vacío";
+        echo "El archivo subido está vacío.";
     }
 }
