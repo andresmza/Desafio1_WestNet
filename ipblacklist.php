@@ -32,9 +32,9 @@ if (isset($_POST['submit'])) {
 //JSON to array
 $api_data = json_decode(file_get_contents($url), true);
 
+//Cruzar información de ambos array
 foreach ($api_data['data'] as $data) {
     if (array_key_exists($data['subnet'], $count_subnet)) {
-        // $nodos[$data['name']] = $count_subnet[$data['subnet']];
         $nodos['data'][] = array(
             'nodo' => $data['name'],
             'casos' => $count_subnet[$data['subnet']]
@@ -42,6 +42,7 @@ foreach ($api_data['data'] as $data) {
     }
 }
 
+//Crear JSON
 $json_string = json_encode($nodos);
 $file = 'cases_by_nodes.json';
 file_put_contents($file, $json_string);
