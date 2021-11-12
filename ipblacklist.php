@@ -45,4 +45,4 @@ foreach ($api_data['data'] as $data) {
 $json_string = json_encode($nodos);
 $file = 'cases_by_nodes.json';
 file_put_contents($file, $json_string);
-echo (json_encode($nodos));
+// echo (json_encode($nodos));
