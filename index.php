@@ -16,9 +16,10 @@
         <br><br>
         <input type="submit" value="Cargar archivo" name="submit">
     </form>
+    <br>
     <?php
-    if (isset($_GET['err'])) {
-        switch ($_GET['err']) {
+    if (isset($_GET['msg'])) {
+        switch ($_GET['msg']) {
             case 1:
                 echo "El archivo subido está vacío.";
                 break;
@@ -30,6 +31,9 @@
                 break;
             case 4:
                 echo "No se encontraron coincidencias con IP válidas.";
+                break;
+            case 5:
+                echo "Archivo cases_by_nodes.json generado correctamente.";
                 break;
         }
     }

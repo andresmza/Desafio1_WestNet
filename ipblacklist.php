@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
                 
                 if ($result == 0) {
                     //Error 4: No se encontraron coincidencias.
-                    header('Location:index.php?err=4');
+                    header('Location:index.php?msg=4');
                 }
 
                 //Contabiliza los resultados obtenidos en un array ('subred' => 'cantidad')
@@ -30,19 +30,21 @@ if (isset($_POST['submit'])) {
 
             } else {
                 //Error 3: El archivo subido no tiene un formato compatible.
-                header('Location:index.php?err=3');
+                header('Location:index.php?msg=3');
 
             }
         } else {
             //Error 2: Se produjo un error al leer el archivo.
-            header('Location:index.php?err=2');
+            header('Location:index.php?msg=2');
 
         }
     } else {
         //Error 1: El archivo subido está vacío.
-        header('Location:index.php?err=1');
+        header('Location:index.php?msg=1');
 
     }
+} else {
+    header('Location:index.php');
 }
 
 //Obtiene datos de API y los almacena en un array.
@@ -69,4 +71,5 @@ foreach ($combined_subnets as $key => $value) {
 $json_string = json_encode($nodes);
 $output_file = 'cases_by_nodes.json';
 file_put_contents($output_file, $json_string);
+header('Location:index.php?msg=5');
 ?>
