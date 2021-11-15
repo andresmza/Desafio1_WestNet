@@ -69,3 +69,4 @@ foreach ($combined_subnets as $key => $value) {
 $json_string = json_encode($nodes);
 $output_file = 'cases_by_nodes.json';
 file_put_contents($output_file, $json_string);
+?>
