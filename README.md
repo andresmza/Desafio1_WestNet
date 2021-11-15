@@ -30,10 +30,13 @@ JSON llamado cases_by_nodes.json respetando el siguiente formato de ejemplo:
 }
 
 NOTAS:
+
 ● Si el nodo no posee casos no debe figurar en el JSON.
+
 ● Por cuestiones de rendimiento se debe, en lo posible, evitar el uso de bucles
 en el código. Para ello investigue sobre las funciones nativas que posee PHP
 para cruzar la información entre arrays.
+
 ● Como los datos vienen de un archivo generado se debe tener en cuenta
 validaciones básicas como: que no se encuentre vacío, que su contenido sean
 IPs válidas, entre otras que ayuden a darle fiabilidad a los resultados.
